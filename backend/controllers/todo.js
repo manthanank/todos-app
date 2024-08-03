@@ -19,7 +19,7 @@ exports.createTodo = async (req, res) => {
 exports.updateTodo = async (req, res) => {
   const todo = await Todo.findByIdAndUpdate(
     req.params.id,
-    { completed: req.body.completed },
+    { title: req.body.title, completed: req.body.completed },
     { new: true }
   );
   res.json(todo);
